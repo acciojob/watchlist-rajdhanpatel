@@ -41,24 +41,6 @@ public class MovieService {
     }
 
 
-    //get all movie list
-    @GetMapping("/movies/get-all-movies")
-    public ResponseEntity<ArrayList<String>> findAllMovies(){
-        ArrayList<String> listOfAllMovie = new ArrayList<>();
-        //<movie, dir> : que is for pass dir name and tell movie name
-        MovieRepository mr = new MovieRepository();
-        HashMap<String,String> copyHereInMap = mr.getDataOfHashMap();
-        for(String s :copyHereInMap.keySet() ){
-
-                listOfAllMovie.add(s);
-
-
-        }
-
-        return new ResponseEntity<>(listOfAllMovie,HttpStatus.ACCEPTED);
-    }
-
-
     @DeleteMapping("/movies/delete-director-by-name")
     public ResponseEntity<String> deleteDirectorByName(@RequestParam("String")String dirName){
         ArrayList<String> listOfAllMovie = new ArrayList<>();
