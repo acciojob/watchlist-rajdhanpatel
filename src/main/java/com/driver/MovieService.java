@@ -12,7 +12,7 @@ public class MovieService {
     //add movie by director name
     HashMap<String,Director> map = new HashMap<>();
     @PostMapping("/movies/add-director")
-    public ResponseEntity<String> addDirector(@RequestBody(required = true)Director director){
+    public ResponseEntity<String> addDirector(@RequestBody()Director director){
         map.put(director.getName(),director);
         return new ResponseEntity<>("success", HttpStatus.ACCEPTED);
     }
