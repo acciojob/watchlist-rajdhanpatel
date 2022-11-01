@@ -18,9 +18,9 @@ public class MovieController {
     }
 
     @GetMapping("/movies/get-movie-by-name/{name}")
-    public ResponseEntity<Movie> getMovieByName(@PathVariable("name")String name){
+    public ResponseEntity<Movie> getMovieByName(@PathVariable("name")String name) {
 
-        return new ResponseEntity<>(map.get(name),HttpStatus.ACCEPTED);
+        return new ResponseEntity<>(map.get(name), HttpStatus.ACCEPTED);
     }
 
 }
